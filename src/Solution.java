@@ -16,9 +16,9 @@ class Solution
         }
         
         int buy =0;
-        buy = prices[0];
+        buy = prices[0];    //chosen first element of array as buying price
         //sell = prices[0];
-        int profit = 0;
+        int profit = 0;		// initial profit is 0
         int i = 1;
         while(i<prices.length)
         {            
@@ -28,7 +28,7 @@ class Solution
             }
             if((prices[i] - buy) > profit)	// calculate the profit for every buy price that we have and if profit is more then we sell here.
             {
-                profit = prices[i] - buy;                
+                profit = prices[i] - buy;  //if profit at current selling price is greater than the existing profit - then this is new profit.       
             }            
             i++;
         }
@@ -41,17 +41,17 @@ class Solution
 	public static ArrayList<Integer> change(int no)
 	{
 		int n = no;
-		int quarters = n/25;
+		int quarters = n/25;		//Divide by 25 to find out no of quarter
 		//System.out.println(n);
-		n = n%25;
+		n = n%25;					//remaining cents after taking out quarter coins
 		//System.out.println(n);
-		int dimes = n/10;
-		n = n%10;
+		int dimes = n/10;			// Divide by 10 to find out no of dimes
+		n = n%10;					//remaining cents after taking out dime coins
 		//System.out.println(n);
-		int nickels = n/5;
-		n=n%5;
+		int nickels = n/5;			// Divide by 5 to find out no of nickels
+		n=n%5;						//remaining cents after taking out nickel coins
 		//System.out.println(n);
-		int pennies = n;
+		int pennies = n;			//remaining cents are no of pennies
 		ArrayList<Integer> l = new ArrayList<>();
 		l.add(quarters);
 		l.add(dimes);
